@@ -5,7 +5,7 @@
 A really simple, lightweight Angular 2 pipe to convert a date/time into a string saying how long ago from now it was.
 
 |Time Range|Output|
-|---|
+|---|---|
 |0 - 45 seconds             | a few seconds ago      |
 |45 - 90 seconds            | a minute ago           |
 |90 seconds - 45 minutes    | X minutes ago          |
