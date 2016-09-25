@@ -4,3 +4,4 @@ node_modules
 .npmignore
 .travis.yml
 tsconfig.json
+.idea
