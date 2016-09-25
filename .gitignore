@@ -2,3 +2,6 @@
 .idea/
 time-ago-pipe.iml
 node_modules
+**/*.d.ts
+**/*.js
+**/*.js.map
