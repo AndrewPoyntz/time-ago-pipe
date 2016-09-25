@@ -1,8 +1,8 @@
 # time-ago-pipe
-[![Build Status](https://travis-ci.org/AndrewPoyntz/time-ago-pipe.svg?branch=master)](https://travis-ci.org/AndrewPoyntz/time-ago-pipe) [![npm](https://img.shields.io/npm/v/time-ago-pipe.svg)]() [![npm](https://img.shields.io/npm/dt/time-ago-pipe.svg?maxAge=2592000)]() [![GitHub issues](https://img.shields.io/github/issues/AndrewPoyntz/time-ago-pipe.svg?maxAge=2592000?style=plastic)]() [![npm](https://img.shields.io/npm/l/time-ago-pipe.svg?maxAge=2592000?style=plastic)]()
+[![Build Status](https://travis-ci.org/AndrewPoyntz/time-ago-pipe.svg?branch=master)](https://travis-ci.org/AndrewPoyntz/time-ago-pipe) [![npm](https://img.shields.io/npm/v/time-ago-pipe.svg)](https://www.npmjs.com/package/time-ago-pipe) [![npm](https://img.shields.io/npm/dt/time-ago-pipe.svg?maxAge=2592000)](https://www.npmjs.com/package/time-ago-pipe) [![GitHub issues](https://img.shields.io/github/issues/AndrewPoyntz/time-ago-pipe.svg?maxAge=2592000?style=plastic)](https://github.com/AndrewPoyntz/time-ago-pipe/issues) [![npm](https://img.shields.io/npm/l/time-ago-pipe.svg?maxAge=2592000?style=plastic)](https://github.com/AndrewPoyntz/time-ago-pipe/blob/master/LICENSE)
 
 
-A really simple, lightweight Angular 2 pipe to convert a date/time into a string saying how long ago from now it was.
+A really simple, lightweight Angular 2 pipe for converting a date string into a time ago
 
 |Time Range|Output|
 |---|---|
@@ -21,13 +21,6 @@ A really simple, lightweight Angular 2 pipe to convert a date/time into a string
 ```npm install time-ago-pipe --save```
 
 ## Usage
-In your component templates you can just do:
-```
-<span>{{your_date | timeAgo}}</span>
-```
-where "your_date" is something, which could be parsed by the standard Js Date()
-
----
 It can be imported into your angular project, as you would for any other library. 
 
 The d.ts files are included, so typings should be picked up automatically  :+1:
@@ -59,4 +52,11 @@ import {TimeAgoPipe} from 'time-ago-pipe
 	bootstrap: [AppComponent]
 })
 ```
+---
+
+In your component templates you can just do:
+```
+<span>{{your_date | timeAgo}}</span>
+```
+where "your_date" is a local date string, which could be parsed by the standard Js Date()
 
