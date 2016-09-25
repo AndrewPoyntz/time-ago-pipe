@@ -1,0 +1,35 @@
+{
+  "name": "time-ago-pipe",
+  "version": "0.0.1",
+  "description": "A simple Angular 2 pipe to change a date into a string of how long ago from it is from now",
+  "main": "time-ago.js",
+  "typings": "time-ago.d.ts",
+  "scripts": {
+    "tsc":"tsc",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AndrewPoyntz/time-ago-pipe.git"
+  },
+  "keywords": [
+    "Angular2",
+    "timeago",
+    "pipe"
+  ],
+  "author": "“Andrew <“andrewpoyntz@hotmail.com”> (“http://www.andrewpoyntz.co.uk)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/AndrewPoyntz/time-ago-pipe/issues"
+  },
+  "homepage": "https://github.com/AndrewPoyntz/time-ago-pipe#readme",
+  "engines": {
+    "node": ">=4.2.4"
+  },
+  "devDependencies": {
+    "@angular/core": "^2.0.1",
+    "rxjs": "^5.0.0-beta.12",
+    "typescript": "^2.0.3",
+    "zone.js": "^0.6.25"
+  }
+}
