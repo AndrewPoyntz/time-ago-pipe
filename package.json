@@ -5,9 +5,8 @@
   "main": "time-ago.js",
   "typings": "time-ago.d.ts",
   "scripts": {
-    "postinstall":"tsc",
     "tsc": "tsc",
-    "test": "mocha --reporter spec"
+    "test": "mocha --reporter nyan"
   },
   "repository": {
     "type": "git",
