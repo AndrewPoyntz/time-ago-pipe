@@ -1,6 +1,6 @@
 {
   "name": "time-ago-pipe",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A simple Angular 2 pipe to change a date into a string of how long ago from it is from now",
   "main": "time-ago-pipe.js",
   "typings": "time-ago-pipe.d.ts",
