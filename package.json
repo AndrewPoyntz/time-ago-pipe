@@ -6,7 +6,7 @@
   "typings": "time-ago-pipe.d.ts",
   "scripts": {
     "tsc": "tsc",
-    "test": "mocha --reporter nyan"
+    "test": "mocha --reporter spec"
   },
   "repository": {
     "type": "git",
