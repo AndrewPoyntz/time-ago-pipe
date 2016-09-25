@@ -10,9 +10,11 @@
     "removeComments": false,
     "noImplicitAny": false
   },
+  "types":[
+    "core-js",
+    "node"
+  ],
   "exclude": [
-    "node_modules",
-    "node",
-    "mocha"
+    "node_modules"
   ]
 }
