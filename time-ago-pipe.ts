@@ -44,7 +44,7 @@ export class TimeAgoPipe implements PipeTransform, OnDestroy {
 			return months + ' months ago';
 		} else if (days <= 545) {
 			return 'a year ago';
-		} else if (days > 546) {
+		} else { // (days > 545)
 			return years + ' years ago';
 		}
 	}
