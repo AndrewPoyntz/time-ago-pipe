@@ -2,7 +2,7 @@
 [![Build Status](https://travis-ci.org/AndrewPoyntz/time-ago-pipe.svg?branch=master)](https://travis-ci.org/AndrewPoyntz/time-ago-pipe) [![npm](https://img.shields.io/npm/v/time-ago-pipe.svg)](https://www.npmjs.com/package/time-ago-pipe) [![npm](https://img.shields.io/npm/dt/time-ago-pipe.svg?maxAge=25920)](https://www.npmjs.com/package/time-ago-pipe) [![GitHub issues](https://img.shields.io/github/issues/AndrewPoyntz/time-ago-pipe.svg?maxAge=25920?style=plastic)](https://github.com/AndrewPoyntz/time-ago-pipe/issues) [![npm](https://img.shields.io/npm/l/time-ago-pipe.svg?maxAge=25920?style=plastic)](https://github.com/AndrewPoyntz/time-ago-pipe/blob/master/LICENSE)
 
 
-A really simple, lightweight Angular 2 pipe for converting a date string into a time ago
+A really simple, lightweight Angular pipe for converting a date string into a time ago
 
 |Time Range|Output|
 |---|---|
@@ -23,7 +23,9 @@ A really simple, lightweight Angular 2 pipe for converting a date string into a 
 ## Usage
 It can be imported into your angular project, as you would for any other library. 
 
-The d.ts files are included, so typings should be picked up automatically  :+1:
+The d.ts files are included, so typings should be picked up automatically.
+
+& thanks to awesome contributors, should now be AoT friendly too.
 
 #### SystemJS
 in your system config file:
@@ -59,4 +61,3 @@ In your component templates you can just do:
 <span>{{your_date | timeAgo}}</span>
 ```
 where "your_date" is a local date string, which could be parsed by the standard Js Date()
-
