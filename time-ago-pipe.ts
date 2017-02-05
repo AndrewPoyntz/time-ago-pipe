@@ -18,6 +18,7 @@ export class TimeAgoPipe implements PipeTransform, OnDestroy {
 					this.ngZone.run(() => this.changeDetectorRef.markForCheck());
 				}, timeToUpdate);
 			}
+			return null;
 		});
 		let minutes = Math.round(Math.abs(seconds / 60));
 		let hours = Math.round(Math.abs(minutes / 60));
