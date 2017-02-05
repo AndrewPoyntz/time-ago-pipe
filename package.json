@@ -1,7 +1,7 @@
 {
   "name": "time-ago-pipe",
-  "version": "1.1.1",
-  "description": "A really simple, lightweight Angular 2 pipe for converting a date string into a time ago",
+  "version": "1.2.0",
+  "description": "A really simple, lightweight Angular pipe for converting a date string into a time ago",
   "main": "time-ago-pipe.js",
   "typings": "time-ago-pipe.d.ts",
   "scripts": {
