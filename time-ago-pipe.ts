@@ -18,6 +18,7 @@ export class TimeAgoPipe implements PipeTransform, OnDestroy {
 					this.ngZone.run(() => this.changeDetectorRef.markForCheck());
 				}, timeToUpdate);
 			}
+			return null;
 		});
 		let minutes = Math.round(Math.abs(seconds / 60));
 		let hours = Math.round(Math.abs(minutes / 60));
@@ -44,7 +45,7 @@ export class TimeAgoPipe implements PipeTransform, OnDestroy {
 			return months + ' months ago';
 		} else if (days <= 545) {
 			return 'a year ago';
-		} else if (days > 546) {
+		} else { // (days > 545)
 			return years + ' years ago';
 		}
 	}
