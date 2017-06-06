@@ -8,4 +8,3 @@ import { TimeAgoPipe } from './time-ago-pipe';
 export class TimeAgoPipeModule { }
 
 export * from './time-ago-pipe';
-
