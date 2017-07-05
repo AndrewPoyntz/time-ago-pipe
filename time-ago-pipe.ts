@@ -108,7 +108,7 @@ const messages = {
 		'hu-HU': 'egy napja'
 	},
 	'x_days_ago': {
-		'en-US': '{0} day ago',
+		'en-US': '{0} days ago',
 		'hu-HU': '{0} napja'
 	},
 	'a_month_ago': {
