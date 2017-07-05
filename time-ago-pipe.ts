@@ -1,11 +1,11 @@
-import {Pipe, PipeTransform, NgZone, ChangeDetectorRef, OnDestroy} from "@angular/core";
+import {Pipe, PipeTransform, NgZone, ChangeDetectorRef, OnDestroy, Inject, LOCALE_ID} from "@angular/core";
 @Pipe({
 	name:'timeAgo',
 	pure:false
 })
 export class TimeAgoPipe implements PipeTransform, OnDestroy {
 	private timer: number;
-	constructor(private changeDetectorRef: ChangeDetectorRef, private ngZone: NgZone) {}
+	constructor(private changeDetectorRef: ChangeDetectorRef, private ngZone: NgZone, @Inject(LOCALE_ID) private locale: string) {}
 	transform(value:string) {
 		this.removeTimer();
 		let d = new Date(value);
@@ -26,27 +26,27 @@ export class TimeAgoPipe implements PipeTransform, OnDestroy {
 		let months = Math.round(Math.abs(days/30.416));
 		let years = Math.round(Math.abs(days/365));
 		if (seconds <= 45) {
-			return 'a few seconds ago';
+			return this.formatMessage('a_few_seconds_ago', []);
 		} else if (seconds <= 90) {
-			return 'a minute ago';
+			return this.formatMessage('a_minute_ago', []);
 		} else if (minutes <= 45) {
-			return minutes + ' minutes ago';
+			return this.formatMessage('x_minutes_ago', [minutes]);
 		} else if (minutes <= 90) {
-			return 'an hour ago';
+			return this.formatMessage('an_hour_ago', []);
 		} else if (hours <= 22) {
-			return hours + ' hours ago';
+			return this.formatMessage('x_hours_ago', [hours]);
 		} else if (hours <= 36) {
-			return 'a day ago';
+			return this.formatMessage('a_day_ago', []);
 		} else if (days <= 25) {
-			return days + ' days ago';
+			return this.formatMessage('x_days_ago', [days]);
 		} else if (days <= 45) {
-			return 'a month ago';
+			return this.formatMessage('a_month_ago', []);
 		} else if (days <= 345) {
-			return months + ' months ago';
+			return this.formatMessage('x_months_ago', [months]);
 		} else if (days <= 545) {
-			return 'a year ago';
+			return this.formatMessage('a_year_ago', []);
 		} else { // (days > 545)
-			return years + ' years ago';
+			return this.formatMessage('x_years_ago', [years]);
 		}
 	}
 	ngOnDestroy(): void {
@@ -72,4 +72,59 @@ export class TimeAgoPipe implements PipeTransform, OnDestroy {
 			return 3600;
 		}
 	}
+	private formatMessage(message: string, args: any[]): string {
+		let formatted: string = messages[message][this.locale] || messages[message]['en-US'];
+		for (let i = 0; i < args.length; i++) {
+			let regexp = new RegExp('\\{'+i+'\\}', 'gi');
+			formatted = formatted.replace(regexp, args[i]);
+		}
+		return formatted;
+	}
 }
+
+const messages = {
+	'a_few_seconds_ago': {
+		'en-US': 'a few seconds ago',
+		'hu-HU': 'pár másodperce'
+	},
+	'a_minute_ago': {
+		'en-US': 'a minute ago',
+		'hu-HU': 'egy perce'
+	},
+	'x_minutes_ago': {
+		'en-US': '{0} minutes ago',
+		'hu-HU': '{0} perce'
+	},
+	'an_hour_ago': {
+		'en-US': 'an hour ago',
+		'hu-HU': 'egy órája'
+	},
+	'x_hours_ago': {
+		'en-US': '{0} hours ago',
+		'hu-HU': '{0} órája'
+	},
+	'a_day_ago': {
+		'en-US': 'a day ago',
+		'hu-HU': 'egy napja'
+	},
+	'x_days_ago': {
+		'en-US': '{0} day ago',
+		'hu-HU': '{0} napja'
+	},
+	'a_month_ago': {
+		'en-US': 'a month ago',
+		'hu-HU': 'egy hónapja'
+	},
+	'x_months_ago': {
+		'en-US': '{0} months ago',
+		'hu-HU': '{0} hónapja'
+	},
+	'a_year_ago': {
+		'en-US': 'a year ago',
+		'hu-HU': 'egy éve'
+	},
+	'x_years_ago': {
+		'en-US': '{0} years ago',
+		'hu-HU': '{0} éve'
+	}
+};
