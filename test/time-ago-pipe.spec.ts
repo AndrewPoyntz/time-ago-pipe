@@ -28,7 +28,7 @@ describe('time-ago-pipe', () => {
 		clock.restore();
 	});
 	describe('output tests', function () {
-		let pipe = new TimeAgoPipe(null, new NgZoneMock() as NgZone);
+		let pipe = new TimeAgoPipe(null, new NgZoneMock() as NgZone, 'en-US');
 		it('\'a few seconds ago\' tests', () => {
 			var pastDate = new Date();
 			for (let i =0; i < 45; i++){

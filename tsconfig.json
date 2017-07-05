@@ -8,7 +8,8 @@
     "experimentalDecorators": true,
     "declaration": true,
     "removeComments": false,
-    "noImplicitAny": false
+    "noImplicitAny": false,
+	"lib": [ "es2015", "dom" ] 
   },
   "angularCompilerOptions": {
 	"genDir": "compiled"
