@@ -21,11 +21,11 @@ A really simple, lightweight Angular pipe for converting a date string into a ti
 ```npm install time-ago-pipe --save```
 
 ## Usage
-It can be imported into your angular project, as you would for any other library. 
+It can be imported into your `Angular` project, as you would for any other library. 
 
 The d.ts files are included, so typings should be picked up automatically.
 
-& thanks to awesome contributors, should now be AoT friendly too.
+Thanks to awesome contributors, should now be `AoT` friendly too.
 
 #### SystemJS
 in your system config file:
