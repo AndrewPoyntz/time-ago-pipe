@@ -32,25 +32,25 @@ in your system config file:
 ```
 map: {
     'time-ago-pipe':'node_modules/time-ago-pipe',
-    etc
+    ...
 }
 ```
 ```
 packages: {
     'time-ago-pipe': { main: 'time-ago-pipe.js' },
-    etc
+    ...
 }
 ```
 
-Then in the @NgModule you want to use it in
+Then in the @NgModule you want to use it in:
 ```
 import {TimeAgoPipe} from 'time-ago-pipe'
 ```
-& add "TimeAgoPipe" to your declarations
+Don't forget to add "TimeAgoPipe" to your declarations:
 ```
 @NgModule({
-	imports: [ ... etc ... ],
-	declarations: [ AppComponent, ...etc..., TimeAgoPipe ],
+	imports: [ ... ],
+	declarations: [ AppComponent, ..., TimeAgoPipe ],
 	bootstrap: [ AppComponent ]
 })
 ```
@@ -60,4 +60,4 @@ In your component templates you can just do:
 ```
 <span>{{ your_date | timeAgo }}</span>
 ```
-where "your_date" is a local date string, which could be parsed by the standard Js Date()
+Where "your_date" is a local date string, which could be parsed by the standard JavaScript Date().
