@@ -61,3 +61,14 @@ In your component templates you can just do:
 <span>{{your_date | timeAgo}}</span>
 ```
 where "your_date" is a local date string, which could be parsed by the standard Js Date()
+
+## i18n
+
+Only English and French are supported.
+
+To use french translations you can just do:
+
+```
+<span>{{your_date | timeAgo:'fr'}}</span>
+```
+where "your_date" is a local date string, which could be parsed by the standard Js Date()
