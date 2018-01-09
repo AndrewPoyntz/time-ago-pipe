@@ -38,6 +38,17 @@ describe('time-ago-pipe', () => {
 				}
 			}
 		});
+
+		it('\'a few seconds ago\' in fr tests', () => {
+			var pastDate = new Date();
+			for (let i =0; i < 45; i++){
+				clock.tick(oneSec);
+				if (i < 44) {
+					expect(pipe.transform(pastDate.toString(), 'fr')).to.equal('il y a quelques secondes');
+				}
+			}
+		});
+
 		it('\'a minute ago\' tests', () => {
 			var pastDate = new Date();
 			clock.tick(oneSec * 45);
