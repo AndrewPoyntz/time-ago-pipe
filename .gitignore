@@ -5,5 +5,5 @@ node_modules
 **/*.d.ts
 **/*.js
 **/*.js.map
-/compiled
+/dist
 *.metadata.json
