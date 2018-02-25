@@ -44,13 +44,13 @@ packages: {
 
 Then in the @NgModule you want to use it in
 ```
-import {TimeAgoPipe} from 'time-ago-pipe
+import {TimeAgoPipeModule} from 'time-ago-pipe';
 ```
-& add "TimeAgoPipe" to your declarations
+& add "TimeAgoPipeModule" to your imports
 ```
 @NgModule({
-	imports: [... etc ...],
-	declarations: [AppComponent, ...etc..., TimeAgoPipe],
+	imports: [... etc ..., TimeAgoPipeModule],
+	declarations: [AppComponent, ... etc ...],
 	bootstrap: [AppComponent]
 })
 ```

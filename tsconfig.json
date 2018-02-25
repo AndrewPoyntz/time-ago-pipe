@@ -10,9 +10,6 @@
     "removeComments": false,
     "noImplicitAny": false
   },
-  "angularCompilerOptions": {
-	"genDir": "compiled"
-  },
   "types":[
     "core-js",
     "node"
