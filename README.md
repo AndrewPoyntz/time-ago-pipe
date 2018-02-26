@@ -23,35 +23,15 @@ A really simple, lightweight Angular pipe for converting a date string into a ti
 ## Usage
 It can be imported into your angular project, as you would for any other library. 
 
-The d.ts files are included, so typings should be picked up automatically.
-
-& thanks to awesome contributors, should now be AoT friendly too.
-
-#### SystemJS
-in your system config file:
+In the @NgModule you want to use it in
 ```
-map: {
-    'time-ago-pipe':'node_modules/time-ago-pipe',
-    etc
-}
+import {TimeAgoPipe} from 'time-ago-pipe';
 ```
-```
-packages: {
-    'time-ago-pipe': {main: 'time-ago-pipe.js'},
-    etc
-}
-```
-
-Then in the @NgModule you want to use it in
-```
-import {TimeAgoPipeModule} from 'time-ago-pipe';
-```
-& add "TimeAgoPipeModule" to your imports
+add "TimeAgoPipe" to your declarations
 ```
 @NgModule({
-	imports: [... etc ..., TimeAgoPipeModule],
-	declarations: [AppComponent, ... etc ...],
-	bootstrap: [AppComponent]
+	imports: [... etc ...],
+	declarations: [..., TimeAgoPipe, ... ]
 })
 ```
 ---
