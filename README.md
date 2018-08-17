@@ -1,8 +1,7 @@
 # time-ago-pipe
 [![Build Status](https://travis-ci.org/AndrewPoyntz/time-ago-pipe.svg?branch=master)](https://travis-ci.org/AndrewPoyntz/time-ago-pipe) [![npm](https://img.shields.io/npm/v/time-ago-pipe.svg)](https://www.npmjs.com/package/time-ago-pipe) [![npm](https://img.shields.io/npm/dt/time-ago-pipe.svg?maxAge=25920)](https://www.npmjs.com/package/time-ago-pipe) [![GitHub issues](https://img.shields.io/github/issues/AndrewPoyntz/time-ago-pipe.svg?maxAge=25920?style=plastic)](https://github.com/AndrewPoyntz/time-ago-pipe/issues) [![npm](https://img.shields.io/npm/l/time-ago-pipe.svg?maxAge=25920?style=plastic)](https://github.com/AndrewPoyntz/time-ago-pipe/blob/master/LICENSE)
 
-
-A really simple, lightweight Angular pipe for converting a date string into a time ago
+A really simple, lightweight [Angular](https://angular.io/) pipe for converting a _date string_ into a _time ago_.
 
 |Time Range|Output|
 |---|---|
@@ -17,47 +16,36 @@ A really simple, lightweight Angular pipe for converting a date string into a ti
 |45 - 345 days              | X months ago           |
 |345 - 545 days (1.5 years) | a year ago             |
 |546 days+                  | X years ago            |
-##Installation
+
+## Installation
 ```npm install time-ago-pipe --save```
 
 ## Usage
-It can be imported into your `Angular` project, as you would for any other library. 
+It can be imported into your angular project, as you would for any other library. 
 
-The d.ts files are included, so typings should be picked up automatically.
+In the **@NgModule** you want to use it in:
 
-Thanks to awesome contributors, should now be `AoT` friendly too.
+~~~~
+import { TimeAgoPipe } from 'time-ago-pipe';
+~~~~ 
 
-#### SystemJS
-in your system config file:
-```
-map: {
-    'time-ago-pipe':'node_modules/time-ago-pipe',
-    ...
-}
-```
-```
-packages: {
-    'time-ago-pipe': { main: 'time-ago-pipe.js' },
-    ...
-}
-```
+add **TimeAgoPipe** to your declarations:
 
-Then in the @NgModule you want to use it in:
-```
-import {TimeAgoPipe} from 'time-ago-pipe'
-```
-Don't forget to add "TimeAgoPipe" to your declarations:
-```
+~~~~ 
 @NgModule({
-	imports: [ ... ],
-	declarations: [ AppComponent, ..., TimeAgoPipe ],
-	bootstrap: [ AppComponent ]
+  imports: [... etc ...],
+  declarations: [..., TimeAgoPipe, ... ]
 })
-```
+~~~~ 
+
 ---
 
 In your component templates you can just do:
-```
+
+~~~~
 <span>{{ your_date | timeAgo }}</span>
-```
-Where "your_date" is a local date string, which could be parsed by the standard JavaScript Date().
+~~~~
+
+where **your_date** is a local _date_ string, which could be parsed by the standard JavaScript [Date()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)
+
+If `this` value is _null_ or not parsable as a [Date()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date), then the pipe will display nothing.

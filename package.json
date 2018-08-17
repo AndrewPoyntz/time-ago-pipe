@@ -1,12 +1,10 @@
 {
   "name": "time-ago-pipe",
-  "version": "1.2.1",
+  "version": "1.3.2",
   "description": "A really simple, lightweight Angular pipe for converting a date string into a time ago",
-  "main": "time-ago-pipe.js",
-  "typings": "time-ago-pipe.d.ts",
   "scripts": {
-    "build": "ngc",
-    "test": "mocha --reporter spec"
+    "build": "ng-packagr -p package.json",
+    "test": "mocha --reporter spec --require ts-node/register test/**/*.spec.ts"
   },
   "repository": {
     "type": "git",
@@ -17,7 +15,7 @@
     "timeago",
     "pipe"
   ],
-  "author": "“Andrew <“andrewpoyntz@hotmail.com”> (“http://www.andrewpoyntz.co.uk)",
+  "author": "Andrew <andrewpoyntz@hotmail.com> (http://www.andrewpoyntz.co.uk)",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/AndrewPoyntz/time-ago-pipe/issues"
@@ -27,19 +25,24 @@
     "node": ">=4.2.4"
   },
   "devDependencies": {
-    "@angular/compiler": "^2.4.5",
-    "@angular/compiler-cli": "^2.4.5",
-    "@angular/core": "^2.0.1",
-    "@angular/platform-server": "^2.4.5",
-    "@types/core-js": "^0.9.34",
+    "@angular/compiler": "^5.2.3",
+    "@angular/compiler-cli": "^5.2.3",
+    "@angular/core": "^5.2.3",
     "@types/mocha": "^2.2.32",
-    "@types/node": "^6.0.41",
-    "chai": "^3.5.0",
-    "mocha": "^3.0.2",
-    "reflect-metadata": "^0.1.8",
-    "rxjs": "^5.0.0-beta.12",
-    "sinon": "^1.17.6",
-    "typescript": "^2.0.3",
-    "zone.js": "^0.6.25"
+    "@types/node": "^9.4.5",
+    "chai": "^4.1.2",
+    "mocha": "^5.0.0",
+    "ng-packagr": "^2.0.0",
+    "rxjs": "^5.5.6",
+    "sinon": "^4.3.0",
+    "ts-node": "^4.1.0",
+    "tsickle": "^0.26.0",
+    "typescript": "2.6.x",
+    "zone.js": "^0.8.20"
+  },
+  "ngPackage": {
+    "lib": {
+      "entryFile": "time-ago.pipe.ts"
+    }
   }
 }

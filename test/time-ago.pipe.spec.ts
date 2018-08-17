@@ -1,8 +1,7 @@
 var expect = require('chai').expect;
 var sinon = require('sinon');
-var reflect = require('reflect-metadata');
 import {NgZone} from '@angular/core';
-import {TimeAgoPipe} from "../time-ago-pipe";
+import {TimeAgoPipe} from "../time-ago.pipe";
 
 class NgZoneMock {
 	runOutsideAngular (fn: Function) {
