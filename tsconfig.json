@@ -10,6 +10,9 @@
     "removeComments": false,
     "noImplicitAny": false
   },
+  "files": [
+    "./public_api.ts"
+  ],
   "types":[
     "core-js",
     "node"

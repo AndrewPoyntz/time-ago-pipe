@@ -1,17 +1,19 @@
 {
   "name": "time-ago-pipe",
-  "version": "1.3.2",
+  "version": "2.0.0",
   "description": "A really simple, lightweight Angular pipe for converting a date string into a time ago",
   "scripts": {
     "build": "ng-packagr -p package.json",
     "test": "mocha --reporter spec --require ts-node/register test/**/*.spec.ts"
   },
+  "module": "index.js",
+  "typings": "index.d.ts",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/AndrewPoyntz/time-ago-pipe.git"
   },
   "keywords": [
-    "Angular2",
+    "Angular6",
     "timeago",
     "pipe"
   ],
@@ -25,24 +27,25 @@
     "node": ">=4.2.4"
   },
   "devDependencies": {
-    "@angular/compiler": "^5.2.3",
-    "@angular/compiler-cli": "^5.2.3",
-    "@angular/core": "^5.2.3",
+    "@angular/compiler": "^6.0.2",
+    "@angular/compiler-cli": "^6.0.2",
+    "@angular/core": "^6.0.2",
     "@types/mocha": "^2.2.32",
-    "@types/node": "^9.4.5",
+    "@types/node": "^9.6.18",
     "chai": "^4.1.2",
-    "mocha": "^5.0.0",
-    "ng-packagr": "^2.0.0",
-    "rxjs": "^5.5.6",
-    "sinon": "^4.3.0",
+    "mocha": "^5.2.0",
+    "ng-packagr": "^2.4.5",
+    "rxjs": ">=6.0.0",
+    "sinon": "^4.5.0",
     "ts-node": "^4.1.0",
-    "tsickle": "^0.26.0",
-    "typescript": "2.6.x",
-    "zone.js": "^0.8.20"
+    "tsickle": "^0.28.0",
+    "typescript": "~2.7.2",
+    "zone.js": "^0.8.26"
   },
   "ngPackage": {
     "lib": {
-      "entryFile": "time-ago.pipe.ts"
+      "entryFile": "public_api.ts"
     }
-  }
+  },
+  "dependencies": {}
 }
