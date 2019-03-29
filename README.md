@@ -18,6 +18,8 @@ A really simple, lightweight Angular pipe for converting a date string into a ti
 |345 - 545 days (1.5 years) | a year ago             |
 |546 days+                  | X years ago            |
 
+If date is in future, suffix will be from now.
+
 ## Installation
 ```npm install time-ago-pipe --save```
 
