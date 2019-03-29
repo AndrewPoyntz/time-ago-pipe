@@ -10,7 +10,7 @@ export class TimeAgoPipe implements PipeTransform, OnDestroy {
 		this.removeTimer();
 		let d = new Date(value);
 		let now = new Date();
-		let seconds = Math.round((now.getTime() - d.getTime())/1000);
+		let seconds = Math.round(Math.abs((now.getTime() - d.getTime())/1000));
 		let timeToUpdate = (Number.isNaN(seconds)) ? 1000 : this.getSecondsUntilUpdate(seconds) *1000;
 		this.timer = this.ngZone.runOutsideAngular(() => {
 			if (typeof window !== 'undefined') {
@@ -26,7 +26,8 @@ export class TimeAgoPipe implements PipeTransform, OnDestroy {
 		let months = Math.round(Math.abs(days/30.416));
 		let years = Math.round(Math.abs(days/365));
 		let suffix = 'ago';
-		if (seconds < 0) {
+		// date is in future
+		if (now.getTime() - d.getTime() < 0) {
 			suffix = 'from now'
 		}
 		if (Number.isNaN(seconds)){
