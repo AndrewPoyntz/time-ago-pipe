@@ -8,7 +8,7 @@ export class TimeAgoPipe implements PipeTransform, OnDestroy {
 	constructor(private changeDetectorRef: ChangeDetectorRef, private ngZone: NgZone) {}
 	transform(value:string|number) {
 		this.removeTimer();
-                let d = typeof value === 'string' ? new Date(value) : new Date(value);
+		let d = typeof value === 'string' ? new Date(value) : new Date(value);
 		let now = new Date();
 		let seconds = Math.round(Math.abs((now.getTime() - d.getTime())/1000));
 		let timeToUpdate = (Number.isNaN(seconds)) ? 1000 : this.getSecondsUntilUpdate(seconds) *1000;
